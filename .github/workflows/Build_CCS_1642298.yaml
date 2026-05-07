@@ -1,0 +1,20 @@
+name: Build CCS_1642298
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-NanoObserver-Firmware:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v6
+
+    - name: Build with CCS
+      uses: orace/ccsbuild@v0.4
+      with:
+        product_family: c28
+        project_path: CCS_1642298
+        configurations: Release
