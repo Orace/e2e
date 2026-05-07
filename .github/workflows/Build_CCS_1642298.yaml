@@ -18,3 +18,10 @@ jobs:
         product_family: c28
         project_path: CCS_1642298
         configurations: Release
+        name: Build CCS_1642298
+
+    - name: Upload firmware artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: firmware
+        path: CCS_1642298/Release/firmware.out
